@@ -4,9 +4,9 @@ const Footer = () => {
     const navigate = useNavigate();
     return (
         <footer className="border-t bg-gray-50">
-            <div className="w-full max-w-screen-xl mx-auto p-4 md:pt-8">
-                <div className="container flex flex-wrap items-center justify-between mx-auto py-4">
-                    <img src="/src/assets/logo.webp" alt="logo" className="w-[180px] cursor-pointer" onClick={() => navigate("/")} />
+            <div className="w-full container mx-auto p-4 md:pt-8">
+                <div className="flex flex-wrap items-center justify-between mx-auto py-4">
+                    <img src="./images/logo.webp" alt="logo" className="w-[180px] cursor-pointer" onClick={() => navigate("/")} />
                     <nav className="text-textColor space-x-10 ">
                         <NavLink to="/" className="font-medium">
                             Home
