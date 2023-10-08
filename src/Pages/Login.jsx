@@ -3,8 +3,8 @@ import SocialLogin from "../Components/Authenications/SocialLogin";
 
 const Login = () => {
     return (
-        <section className="container mx-auto flex justify-between">
-            <img src="/src/assets/login-img.svg" alt="login_image" className="w-1/2" />
+        <section className="container py-10 mx-auto flex justify-between">
+            <img src="/src/assets/login-img.svg" alt="login image" className="w-1/2" />
             <div className="w-full flex flex-col items-center justify-center mx-auto lg:py-0">
                 <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">

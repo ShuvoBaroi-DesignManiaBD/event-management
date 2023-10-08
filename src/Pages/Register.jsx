@@ -3,8 +3,8 @@ import SocialLogin from "../Components/Authenications/SocialLogin";
 
 const Register = () => {
     return (
-        <section className="container mx-auto flex justify-between">
-            <img src="/src/assets/login-img.svg" alt="login_image" className="w-1/2" />
+        <section className="container py-10 mx-auto flex justify-between">
+            <img src="/src/assets/register.svg" alt="register image" className="w-1/2" />
             <div className="w-full flex flex-col items-center justify-center mx-auto lg:py-0">
                 <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -12,6 +12,22 @@ const Register = () => {
                             Sign in to your account
                         </h1>
                         <form className="space-y-4 md:space-y-6" >
+                            <div>
+                                <label
+                                    htmlFor="name"
+                                    className="block mb-2 text text-sm font-medium"
+                                >
+                                    Your name
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 placeholder-gray-400"
+                                    placeholder="John Doe"
+                                    required
+                                />
+                            </div>
                             <div>
                                 <label
                                     htmlFor="email"

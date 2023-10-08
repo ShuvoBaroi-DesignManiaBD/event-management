@@ -9,11 +9,13 @@ import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
 import BookedServices from './Pages/BookedServices.jsx'
 import BookmarkedServices from './Pages/BookmarkedServices.jsx'
+import ErrorPage from './Pages/ErrorPage'
 
 const routes = createBrowserRouter([
   {
     path: '/',
     element: <MainRoute></MainRoute>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
