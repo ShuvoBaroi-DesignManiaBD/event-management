@@ -1,6 +1,37 @@
 import { Link } from "react-router-dom";
+import TeamCard from "../Components/Cards/TeamCard";
 
 const Home = () => {
+    const teamMembers = [
+        {
+            id: '01',
+            name: 'Bonnie Green',
+            position: 'CEO',
+            description: 'Bonnie drives the technical strategy of the Event Management platform and brand. With a visionary approach, she leads the team towards innovative solutions and unparalleled success.',
+            photo: "/public/images/bonnie-green.webp"
+        },
+        {
+            id: '02',
+            name: 'Jese Leos',
+            position: 'CTO',
+            description: 'Jese, as the Chief Technical Officer, spearheads the technical strategy of the Event Management platform and brand. His expertise ensures cutting-edge technology integration and seamless platform development.',
+            photo: "/public/images/jese-leos.webp"
+        },
+        {
+            id: '03',
+            name: 'Michael Gough',
+            position: 'Head of Event Planning',
+            description: 'Michael takes charge as the Head of Event Planning, driving the technical strategy of the Event Management platform and brand. His leadership in event planning ensures flawless execution and memorable experiences.',
+            photo: "/public/images/michael-gouch.webp"
+        },
+        {
+            id: '04',
+            name: 'Lana Byrd',
+            position: 'Lead Designer',
+            description: 'Lana plays a crucial role in the team, driving the technical strategy of the Event Management platform and brand through her creative prowess as the Lead Designer. Her innovative designs bring life to the platform and elevate user experiences.',
+            photo: "/public/images/lana-byrd.webp"
+        }
+    ]
     return (
         <>
             {/* Hero section */}
@@ -30,6 +61,24 @@ const Home = () => {
                             src="/images/corporate-event-management.svg"
                             alt="corporate event management"
                         />
+                    </div>
+                </div>
+            </section>
+            {/* Services section */}
+            {/* Our team section */}
+            <section className="bg-white">
+                <div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6 ">
+                    <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-headingColor">
+                            Our Team
+                        </h2>
+                        <p className="font-light text-textColor lg:mb-16 sm:text-lg">
+                            Meet our dynamic team at Event Management—visionaries, innovators, and experts in their fields, working collaboratively to redefine excellence in event planning and execution.
+                        </p>
+                    </div>
+                    <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+                        {teamMembers.map(member => <TeamCard key={member.id} member={member}></TeamCard>)}
+
                     </div>
                 </div>
             </section>
