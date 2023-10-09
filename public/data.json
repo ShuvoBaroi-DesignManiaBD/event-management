@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Conference and Seminar Management",
+      "key": 1,
+      "image": "https://i.ibb.co/CbPBcwh/conference-seminar.webp",
+      "price": 15000,
+      "shortDescription": "Expert planning and execution for successful conferences and seminars.",
+      "detailedDescription": "Elevate your conferences and seminars with our expert management service. From meticulous venue selection to seamless speaker coordination, we ensure every detail contributes to a successful event. Our team handles logistics, audio-visual setups, and attendee engagement, creating an environment conducive to learning and collaboration. With a focus on precision and professionalism, we go beyond event execution to create memorable experiences. Whether it's a large-scale conference or an intimate seminar, our comprehensive approach guarantees a flawless event that exceeds expectations."
+    },
+    {
+      "name": "Trade Show and Expo Organization",
+      "key": 2,
+      "image": "https://i.ibb.co/wwB6J07/trade-show-and-expo.webp",
+      "price": 35000,
+      "shortDescription": "Comprehensive trade show management for optimal brand exposure.",
+      "detailedDescription": "Maximize your brand's visibility at trade shows and expos with our comprehensive organization service. We handle every aspect, from strategic booth setups to the creation of impactful promotional materials. Our team ensures seamless coordination before, during, and after the event, maximizing your brand's impact on the industry stage. With a focus on attendee interactions and engagement, we create an immersive experience that leaves a lasting impression. Elevate your presence and make a statement at industry events with our strategic trade show and expo organization."
+    },
+    {
+      "name": "Team Building Workshops",
+      "key": 3,
+      "image": "https://i.ibb.co/yShkWVx/team-building-workshops.webp",
+      "price": 8000,
+      "shortDescription": "Tailored workshops to enhance team dynamics and collaboration.",
+      "detailedDescription": "Foster a collaborative work environment with our tailored team building workshops. Each session is crafted to enhance team dynamics, improve communication, and promote effective collaboration. Our engaging activities and problem-solving exercises create a positive and inclusive atmosphere where team members bond and develop a deeper understanding of each other. These workshops go beyond traditional team-building, offering strategies and insights that can be applied directly to the workplace. Invest in your team's success and cohesion with our team building workshops designed for lasting impact."
+    },
+    {
+      "name": "Product Launch Coordination",
+      "key": 4,
+      "image": "https://i.ibb.co/9vWNW14/product-launch.webp",
+      "price": 50000,
+      "shortDescription": "Strategic planning for impactful product launches.",
+      "detailedDescription": "Ensure the success of your product launches with our strategic coordination service. From initial event conceptualization to the execution of every detail, we handle product showcases, media interactions, and audience engagement. Our team understands the importance of making a lasting impression during product launches, and we bring creativity and precision to every aspect of the event. Create anticipation, generate buzz, and make your product launch unforgettable with our expertise in strategic planning and execution. Elevate your brand with a product launch that captures attention and leaves a lasting impact on your audience."
+    },
+    {
+      "name": "Corporate Meeting Planning",
+      "key": 5,
+      "image": "https://i.ibb.co/7C6dHqk/corporate-meeting-planning.webp",
+      "price": 12000,
+      "shortDescription": "Efficient and professional management of corporate meetings.",
+      "detailedDescription": "Optimize your corporate meetings with our efficient planning service. We go beyond logistics, managing scheduling, coordinating details, and ensuring a conducive environment for productive discussions. Our professional approach to corporate meeting planning streamlines the entire process, allowing you to focus on the content and goals of your meetings. From small team gatherings to large-scale corporate assemblies, we tailor our services to meet your unique needs. Elevate the impact of your corporate meetings with our expertise in efficient and professional event planning. Ensure a seamless experience for both organizers and participants with our comprehensive corporate meeting planning service."
+    },
+    {
+      "name": "Award Ceremony Management",
+      "key": 6,
+      "image": "https://i.ibb.co/B6NvPVD/award-ceremony-management.webp",
+      "price": 20000,
+      "shortDescription": "Seamless execution of award ceremonies to honor achievements.",
+      "detailedDescription": "Celebrate achievements with our award ceremony management service. From meticulous venue decoration to nominee coordination, we ensure a flawlessly executed ceremony that recognizes and honors the accomplishments of your team. Our comprehensive approach covers every detail, from scriptwriting to stage production, creating a memorable and impactful experience for attendees. Elevate your award ceremonies with our expertise in seamless execution and event coordination. Whether it's a corporate recognition event or an industry awards ceremony, our team ensures that every moment is carefully crafted to showcase the achievements and excellence of your honorees."
+    }
+  ]
+  

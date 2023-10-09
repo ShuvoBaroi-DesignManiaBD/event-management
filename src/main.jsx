@@ -10,6 +10,8 @@ import Register from './Pages/Register.jsx'
 import BookedServices from './Pages/BookedServices.jsx'
 import BookmarkedServices from './Pages/BookmarkedServices.jsx'
 import ErrorPage from './Pages/ErrorPage'
+import PrivateRoute from './Routes/PrivateRoute'
+import ServiceDetails from './Pages/ServiceDetails'
 
 const routes = createBrowserRouter([
   {
@@ -21,10 +23,10 @@ const routes = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
       },
-      {
-        path: '/services',
-        element: <Services></Services>,
-      },
+      // {
+      //   path: '/services',
+      //   element: <Services></Services>,
+      // },
       {
         path: '/booked-services',
         element: <BookedServices></BookedServices>,
@@ -40,6 +42,16 @@ const routes = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>,
+      },
+      {
+        path: '/:path',
+        element: <PrivateRoute></PrivateRoute>,
+        children: [
+          {
+            path: '/:path',
+            element: <ServiceDetails></ServiceDetails>,
+          },
+        ],
       },
     ]
   }

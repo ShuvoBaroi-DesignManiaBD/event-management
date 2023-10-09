@@ -1,9 +1,10 @@
-const EventDetails = () => {
+
+const ServiceDetails = () => {
     return (
         <div>
-            <h2>This is event details page</h2>
+            <h2>service details</h2>
         </div>
     );
 };
 
-export default EventDetails;
+export default ServiceDetails;

@@ -1,7 +1,20 @@
 import { Link } from "react-router-dom";
 import TeamCard from "../Components/Cards/TeamCard";
+import UseData from "../Hooks/UseData";
+import ServiceCard from "../Components/Cards/ServiceCard";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+    // const data = UseData();
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        const getData = async () => {
+        await fetch('/public/data.json')
+                .then(res => res.json())
+                .then(data2 => setData(data2))
+        }
+        getData();
+    }, []);
     const teamMembers = [
         {
             id: '01',
@@ -65,6 +78,22 @@ const Home = () => {
                 </div>
             </section>
             {/* Services section */}
+            <section className="bg-white">
+                <div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6 ">
+                    <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-headingColor">
+                            Our Team
+                        </h2>
+                        <p className="font-light text-textColor lg:mb-16 sm:text-lg">
+                            Meet our dynamic team at Event Management—visionaries, innovators, and experts in their fields, working collaboratively to redefine excellence in event planning and execution.
+                        </p>
+                    </div>
+                    <div className="grid gap-10 mb-6 lg:mb-16 md:grid-cols-3">
+                        {data.map(service => <ServiceCard key={service.key} service={service}></ServiceCard>)}
+
+                    </div>
+                </div>
+            </section>
             {/* Our team section */}
             <section className="bg-white">
                 <div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6 ">

@@ -5,9 +5,9 @@ const Footer = () => {
     return (
         <footer className="border-t bg-gray-50">
             <div className="w-full container mx-auto p-4 md:pt-8">
-                <div className="flex flex-wrap items-center justify-between mx-auto py-4">
-                    <img src="./images/logo.webp" alt="logo" className="w-[180px] cursor-pointer" onClick={() => navigate("/")} />
-                    <nav className="text-textColor space-x-10 ">
+                <div className="flex flex-col gap-10 items-center justify-between mx-auto py-4">
+                    <img src="./images/logo.webp" alt="logo" className="w-[250px] cursor-pointer mt-5" onClick={() => navigate("/")} />
+                    <nav className="text-textColor space-x-10 my-5">
                         <NavLink to="/" className="font-medium">
                             Home
                         </NavLink>
@@ -18,7 +18,7 @@ const Footer = () => {
                             Services
                         </NavLink>
                     </nav>
-                    <div className="w-full mt-10">
+                    <div className="w-full">
                         <p className="text-[12px] mx-auto text-textColor text-center w-[40%]">
                             This is a test project created for demonstration purposes. Any resemblance to real events or entities is purely coincidental.
                         </p>
