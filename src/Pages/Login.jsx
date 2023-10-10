@@ -1,7 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import SocialLogin from "../Components/Authenications/SocialLogin";
+import { useAuth } from "../Hooks/useAuth";
 
 const Login = () => {
+    const {signInWithEmail} = useAuth();
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInWithEmail(email, password) && navigate("/");
+      }
     return (
         <section className="container py-10 mx-auto flex justify-between">
             <img src="./images/login-img.svg" alt="login image" className="w-1/2" />
@@ -11,7 +20,7 @@ const Login = () => {
                         <h1 className="secondaryHeading text-gray-900">
                             Sign in to your account
                         </h1>
-                        <form className="space-y-4 md:space-y-6" >
+                        <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label
                                     htmlFor="email"

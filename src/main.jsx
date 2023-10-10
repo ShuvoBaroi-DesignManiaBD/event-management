@@ -12,6 +12,8 @@ import BookmarkedServices from './Pages/BookmarkedServices.jsx'
 import ErrorPage from './Pages/ErrorPage'
 import PrivateRoute from './Routes/PrivateRoute'
 import ServiceDetails from './Pages/ServiceDetails'
+import ServicesProvider from './Contexts/ServicesContext'
+import { AuthProvider } from './Contexts/AuthContext'
 
 const routes = createBrowserRouter([
   {
@@ -22,6 +24,7 @@ const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch('/public/data.json')
       },
       // {
       //   path: '/services',
@@ -50,8 +53,12 @@ const routes = createBrowserRouter([
           {
             path: '/:path',
             element: <ServiceDetails></ServiceDetails>,
-          },
+          }
         ],
+      },
+      {
+        path: '/booked-services',
+        element: <PrivateRoute><BookedServices></BookedServices></PrivateRoute>,
       },
     ]
   }
@@ -59,8 +66,10 @@ const routes = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={routes}>
-      <MainRoute></MainRoute>
-    </RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={routes}>
+        <MainRoute></MainRoute>
+      </RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )

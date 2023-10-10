@@ -1,10 +1,22 @@
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Hooks/useAuth";
 
 const SocialLogin = () => {
+    const {user, googleLogin} = useAuth();
+    // const [redirect, setRedirect] = useState(false);
+    const navigate = useNavigate();
+    console.log(user);
+
+    const handleLogin = (method) => {
+      method();
+      navigate("/");
+    };
     return (
         <div className="socialLogin flex flex-col gap-6">
                                 <button
                                     type="button"
                                     className="text secondaryBtn flex justify-center items-center"
+                                    onClick={() => handleLogin(googleLogin)}
                                 >
                                     <svg
                                         className="w-4 h-4 mr-2"

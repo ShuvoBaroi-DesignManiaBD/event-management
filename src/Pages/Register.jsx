@@ -1,7 +1,40 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import SocialLogin from "../Components/Authenications/SocialLogin";
+import { useAuth } from "../Hooks/useAuth";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const Register = () => {
+    const { createUserWithEmail } = useAuth();
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email.password);
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[_.!@$*=?#-])[A-Za-z\d_.!@$*=?#-]{8,24}$/;
+
+        if (password !== regex) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops!',
+                text: 'Your password must have one uppercase, lowercase & special character!',
+            }) 
+            // toast.error('Your password must have one uppercase, lowercase & special character!', {
+            //     position: "top-center",
+            //     autoClose: 5000,
+            //     hideProgressBar: false,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "light",
+            // });
+        } else {
+            createUserWithEmail(email, password) && navigate("/");
+        }
+        
+    }
     return (
         <section className="container py-10 mx-auto flex justify-between">
             <img src="./images/register.svg" alt="register image" className="w-1/2" />
@@ -11,7 +44,7 @@ const Register = () => {
                         <h1 className="secondaryHeading text-gray-900">
                             Sign in to your account
                         </h1>
-                        <form className="space-y-4 md:space-y-6" >
+                        <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                             <div>
                                 <label
                                     htmlFor="name"
@@ -54,6 +87,7 @@ const Register = () => {
                                 <input
                                     type="password"
                                     name="password"
+                                    minLength="8"
                                     id="password"
                                     placeholder="••••••••"
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 placeholder-gray-400"

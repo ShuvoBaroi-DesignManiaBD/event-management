@@ -1,20 +1,11 @@
 import { Link } from "react-router-dom";
 import TeamCard from "../Components/Cards/TeamCard";
-import UseData from "../Hooks/UseData";
 import ServiceCard from "../Components/Cards/ServiceCard";
-import { useEffect, useState } from "react";
+import {useServices} from "../Hooks/useServices";
 
 const Home = () => {
-    // const data = UseData();
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        const getData = async () => {
-        await fetch('/public/data.json')
-                .then(res => res.json())
-                .then(data2 => setData(data2))
-        }
-        getData();
-    }, []);
+    const [services] = useServices()
+    console.log(services);
     const teamMembers = [
         {
             id: '01',
@@ -78,18 +69,18 @@ const Home = () => {
                 </div>
             </section>
             {/* Services section */}
-            <section className="bg-white">
+            <section className="bg-white" id="services">
                 <div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6 ">
-                    <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+                    <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-16">
                         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-headingColor">
-                            Our Team
+                            Our Services
                         </h2>
-                        <p className="font-light text-textColor lg:mb-16 sm:text-lg">
-                            Meet our dynamic team at Event Management—visionaries, innovators, and experts in their fields, working collaboratively to redefine excellence in event planning and execution.
+                        <p className="font-light text-textColor lg:mb-16 text">
+                        Discover excellence in corporate event management with our tailored services. From conferences to product launches, our team ensures seamless execution and memorable experiences. Trust us to handle logistics and coordination, leaving you free to focus on your event's success.
                         </p>
                     </div>
                     <div className="grid gap-10 mb-6 lg:mb-16 md:grid-cols-3">
-                        {data.map(service => <ServiceCard key={service.key} service={service}></ServiceCard>)}
+                        {services.map(service => <ServiceCard key={service.key} service={service}></ServiceCard>)}
 
                     </div>
                 </div>
