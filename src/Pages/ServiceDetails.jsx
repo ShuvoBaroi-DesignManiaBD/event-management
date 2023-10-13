@@ -54,7 +54,7 @@ const ServiceDetails = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops!',
-                text: 'You have already booked this service',
+                text: 'You have already bookmarked this service',
             }) 
         }
             

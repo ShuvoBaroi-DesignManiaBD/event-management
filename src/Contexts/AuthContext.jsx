@@ -42,7 +42,11 @@ export const AuthProvider = ({ children }) => {
 
     const signInWithEmail = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
-            .then(user => setUser(user?.user) && console.log(user))
+            .then(user => setUser(user?.user) && Swal.fire({
+                icon: 'success',
+                title: 'Success!!!',
+                text: 'You have successfully logged in',
+            }))
             .catch((error) => {
                 console.error(error);
                 Swal.fire({
@@ -57,6 +61,11 @@ export const AuthProvider = ({ children }) => {
         signInWithPopup(auth, googleProvider)
             .then(user => {
                 setUser(user?.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!!!',
+                    text: 'You have successfully logged in',
+                })
                 // console.log(user);
                 // console.log(user.user);
                 // user? addUser(user.user): '';
@@ -71,20 +80,6 @@ export const AuthProvider = ({ children }) => {
                 })
             })
     }
-
-    const githubLogin = () => {
-        signInWithPopup(auth, githubProvider)
-            .then(user => setUser(user?.user))
-            .catch(err => {
-                console.error(err)
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops!',
-                    text: 'Something went wrong at the time of creating your account!',
-                })
-            })
-    }
-
 
 
     const logout = () => {
@@ -118,7 +113,6 @@ export const AuthProvider = ({ children }) => {
         createUserWithEmail,
         signInWithEmail,
         googleLogin,
-        githubLogin,
         logout,
         resetPass,
         loading,
