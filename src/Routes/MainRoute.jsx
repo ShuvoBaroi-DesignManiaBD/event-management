@@ -4,6 +4,7 @@ import Footer from "../Components/Footer/Footer";
 import { Spinner } from "@material-tailwind/react";
 import ServicesProvider from "../Contexts/ServicesContext";
 import { useAuth } from "../Hooks/useAuth";
+import Header2 from "../Components/Header/Header2";
 
 const MainRoute = () => {
         const { loading } = useAuth();
@@ -18,7 +19,8 @@ const MainRoute = () => {
     } else {
         return <>
         <ServicesProvider>
-            <Header></Header>
+            {/* <Header></Header> */}
+            <Header2></Header2>
             <Outlet></Outlet>
             <Footer></Footer>
         </ServicesProvider>

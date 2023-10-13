@@ -8,7 +8,7 @@ export const ServicesProvider= ({children}) => {
 
   useEffect(() => {
     const getData = () => {
-    fetch('/public/data.json')
+    fetch('./data.json')
             .then(res => res.json())
             .then(data => setServices(data))
     }

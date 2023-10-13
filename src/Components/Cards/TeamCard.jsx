@@ -3,7 +3,7 @@ const TeamCard = ({member}) => {
     return (
         <div className="items-center bg-gray-50 rounded-lg shadow sm:flex">
                                 <img
-                                    className="md:w-1/3 h-full object-cover rounded-lg sm:rounded-none sm:rounded-l-lg"
+                                    className="md:w-1/3 w-full h-[300px] md:f-full object-cover rounded-lg sm:rounded-none sm:rounded-l-lg"
                                     src={member.photo}
                                     alt={member.name}
                                 />

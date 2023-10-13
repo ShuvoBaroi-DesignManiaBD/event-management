@@ -12,7 +12,6 @@ import BookmarkedServices from './Pages/BookmarkedServices.jsx'
 import ErrorPage from './Pages/ErrorPage'
 import PrivateRoute from './Routes/PrivateRoute'
 import ServiceDetails from './Pages/ServiceDetails'
-import ServicesProvider from './Contexts/ServicesContext'
 import { AuthProvider } from './Contexts/AuthContext'
 
 const routes = createBrowserRouter([
@@ -26,10 +25,10 @@ const routes = createBrowserRouter([
         element: <Home></Home>,
         loader: () => fetch('/public/data.json')
       },
-      // {
-      //   path: '/services',
-      //   element: <Services></Services>,
-      // },
+      {
+        path: '/services',
+        element: <Services></Services>,
+      },
       {
         path: '/booked-services',
         element: <BookedServices></BookedServices>,
@@ -53,12 +52,8 @@ const routes = createBrowserRouter([
           {
             path: '/:path',
             element: <ServiceDetails></ServiceDetails>,
-          }
+          },
         ],
-      },
-      {
-        path: '/booked-services',
-        element: <PrivateRoute><BookedServices></BookedServices></PrivateRoute>,
       },
     ]
   }

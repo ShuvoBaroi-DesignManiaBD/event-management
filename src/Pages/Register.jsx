@@ -3,9 +3,12 @@ import SocialLogin from "../Components/Authenications/SocialLogin";
 import { useAuth } from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 
 const Register = () => {
     const { createUserWithEmail } = useAuth();
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,12 +17,12 @@ const Register = () => {
         console.log(email.password);
         const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[_.!@$*=?#-])[A-Za-z\d_.!@$*=?#-]{8,24}$/;
 
-        if (password !== regex) {
+        if (!regex.test(password)) {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops!',
                 text: 'Your password must have one uppercase, lowercase & special character!',
-            }) 
+            })
             // toast.error('Your password must have one uppercase, lowercase & special character!', {
             //     position: "top-center",
             //     autoClose: 5000,
@@ -32,8 +35,11 @@ const Register = () => {
             // });
         } else {
             createUserWithEmail(email, password) && navigate("/");
+            e.target.reset();
         }
-        
+    }
+    const togglePass = () => {
+        setShowPassword(!showPassword);
     }
     return (
         <section className="container py-10 mx-auto flex justify-between">
@@ -84,8 +90,10 @@ const Register = () => {
                                 >
                                     Your password
                                 </label>
+                                <div className="relative">
+                                {showPassword ? <FiEye className="absolute bottom-3 right-3" onClick={togglePass}></FiEye> : <FiEyeOff className="absolute bottom-3 right-3" onClick={togglePass}></FiEyeOff>}
                                 <input
-                                    type="password"
+                                    type={showPassword ? 'text' : 'password'}
                                     name="password"
                                     minLength="8"
                                     id="password"
@@ -93,6 +101,7 @@ const Register = () => {
                                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 placeholder-gray-400"
                                     required=""
                                 />
+                                </div>
                             </div>
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
@@ -125,7 +134,7 @@ const Register = () => {
                                 type="submit"
                                 className="primaryBtn w-full"
                             >
-                                Sign in
+                                Sign up
                             </button>
                             {/* Social login */}
                             <SocialLogin></SocialLogin>

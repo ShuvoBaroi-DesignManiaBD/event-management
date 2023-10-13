@@ -6,7 +6,6 @@ import ServicesProvider from "../Contexts/ServicesContext";
 const PrivateRoute = () => {
 
     const { user } = useAuth();
-
     if (user) {
         // return children
         return (

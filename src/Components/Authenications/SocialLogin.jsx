@@ -33,7 +33,7 @@ const SocialLogin = () => {
                                     </svg>
                                     Sign in with Google
                                 </button>
-                                <button
+                                {/* <button
                                     type="button"
                                     className="text secondaryBtn flex justify-center items-center"
                                 >
@@ -51,7 +51,7 @@ const SocialLogin = () => {
                                         />
                                     </svg>
                                     Sign in with Github
-                                </button>
+                                </button> */}
                             </div>
     );
 };

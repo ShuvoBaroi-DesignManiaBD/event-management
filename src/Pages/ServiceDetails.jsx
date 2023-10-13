@@ -47,7 +47,7 @@ const ServiceDetails = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'Thank you!!!',
-                text: 'You have successfully booked this service',
+                text: 'You have successfully bookmarked this service',
             }) && saveBookmarkedData(currentService);
             console.log(key, services);
         } else {
@@ -69,19 +69,19 @@ const ServiceDetails = () => {
         <InnerPagesHero>
             <h2 className="primaryHeading">Our Services</h2>
         </InnerPagesHero>
-            <div className="flex items-start gap-10 container mx-auto py-20">
-                <div className="w-[70%] sm:mx-auto mb-20 space-y-4">
+            <div className="flex flex-col px-4 md:px-0 md:flex-row items-start gap-10 container mx-auto py-20">
+                <div className="md:w-[70%] sm:mx-auto mb-20 space-y-4">
                     <div className={`relative container mx-auto lg:h-[500px] bg-[url(${currentService.image})] bg-cover mb-10 `}>
                         <img src={currentService?.image} width="100%" alt="" className="h-full object-cover rounded-lg" />
-                        <div className="px-10 py-5 bg-[#00000080] absolute bottom-0 left-0 w-full rounded-b-lg flex justify-between">
-                            <button className="primaryBtn z-20" onClick={addItem}>Book now (${currentService.price}) </button>
-                            <button className="primaryBtn hover:text-white text bg-primaryLight border-none z-20 flex items-center gap-2" onClick={addItem}>Bookmark <BsBookmark></BsBookmark> </button>
+                        <div className="px-4 py-5 bg-[#00000080] absolute bottom-0 left-0 w-full rounded-b-lg flex flex-col md:flex-row justify-between gap-3">
+                            <button className="primaryBtn py-3 z-20" onClick={addItem}>Book now (${currentService.price}) </button>
+                            <button className="primaryBtn text-center hover:text-white text bg-primaryLight border-none z-20 flex justify-center items-center gap-2" onClick={addBookmark}>Bookmark <BsBookmark></BsBookmark> </button>
                         </div>
                     </div>
                     <h2 className="secondaryHeading sm:primaryHeading">{currentService.name}</h2>
                     <p className="text">{currentService.detailedDescription}</p>
                 </div>
-                <div className="w-[30%] border-2 rounded-lg p-5 ">
+                <div className="md:w-[30%] border-2 rounded-lg p-5 ">
                     <h2 className="secondaryHeading mb-5">Other services</h2>
                     {otherServices.map(service => <ServiceDetailsSidebar key={service.key} service={service}></ServiceDetailsSidebar>)}
                 </div>

@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops!',
-                    text: 'Something went wrong at the time of creating your account!',
+                    text: error,
                 })
             });
     }
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops!',
-                    text: 'Something went wrong at the time of login to your account!',
+                    text: error,
                 })
             });
     }
