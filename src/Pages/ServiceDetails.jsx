@@ -1,17 +1,13 @@
 import { useLocation } from "react-router-dom";
-import { getData, useServices } from "../Hooks/useServices";
+import { getData } from "../Hooks/useServices";
 import Swal from "sweetalert2";
-import { useState } from "react";
 import ServiceDetailsSidebar from "../Components/Sidebars/ServiceDetailsSidebar";
 import InnerPagesHero from "../Components/Hero/InnerPagesHero";
 import { getBookedData, saveBookedData } from "../Hooks/useBookedData";
-import { toast } from "react-toastify";
 import { BsBookmark } from "react-icons/bs";
 import { getBookmarkedData, saveBookmarkedData } from "../Hooks/useBookmarkedData";
-// import { useAuth } from "../Components/Hooks/useAuth";
 
 const ServiceDetails = () => {
-    const [booked, setBooked] = useState(false);
     const services = getData();
     const location = useLocation();
     const key = location.state;
@@ -60,10 +56,6 @@ const ServiceDetails = () => {
             
     }
 
-    // console.log(service);
-    // const buttonStyle = {
-    //     backgroundColor: service.txt_btn_bg_color
-    // }
     return (
         <>
         <InnerPagesHero>

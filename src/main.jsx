@@ -23,11 +23,23 @@ const routes = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('/public/data.json')
+        loader: () => fetch('/data.json')
       },
       {
-        path: '/services',
+        path: '/our-services',
         element: <Services></Services>,
+        // children: [
+        //   {
+        //     path: '/services/:path',
+        //     element: <PrivateRoute></PrivateRoute>,
+        //     children: [
+        //       {
+        //         path: '/services/:path',
+        //         element: <ServiceDetails></ServiceDetails>,
+        //       },
+        //     ],
+        //   },
+        // ]
       },
       {
         path: '/booked-services',
@@ -46,11 +58,11 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/:path',
+        path: '/services',
         element: <PrivateRoute></PrivateRoute>,
         children: [
           {
-            path: '/:path',
+            path: '/services/:path',
             element: <ServiceDetails></ServiceDetails>,
           },
         ],

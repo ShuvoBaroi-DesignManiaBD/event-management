@@ -12,7 +12,7 @@ const MobileNav = () => {
                 Home
             </NavLink>
 
-            <NavLink to="/services" className={activeStatus}>
+            <NavLink to="/our-services" className={activeStatus}>
                 Services
             </NavLink>
             {user ?

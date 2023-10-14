@@ -18,28 +18,28 @@ const Home = () => {
             name: 'Bonnie Green',
             position: 'CEO',
             description: 'Bonnie drives the technical strategy of the Event Management platform and brand. With a visionary approach, she leads the team towards innovative solutions and unparalleled success.',
-            photo: "/public/images/bonnie-green.webp"
+            photo: "/images/bonnie-green.webp"
         },
         {
             id: '02',
             name: 'Jese Leos',
             position: 'CTO',
             description: 'Jese, as the Chief Technical Officer, spearheads the technical strategy of the Event Management platform and brand. His expertise ensures cutting-edge technology integration and seamless platform development.',
-            photo: "/public/images/jese-leos.webp"
+            photo: "/images/jese-leos.webp"
         },
         {
             id: '03',
             name: 'Michael Gough',
             position: 'Head of Event Planning',
             description: 'Michael takes charge as the Head of Event Planning, driving the technical strategy of the Event Management platform and brand. His leadership in event planning ensures flawless execution and memorable experiences.',
-            photo: "/public/images/michael-gouch.webp"
+            photo: "/images/michael-gouch.webp"
         },
         {
             id: '04',
             name: 'Lana Byrd',
             position: 'Lead Designer',
             description: 'Lana plays a crucial role in the team, driving the technical strategy of the Event Management platform and brand through her creative prowess as the Lead Designer. Her innovative designs bring life to the platform and elevate user experiences.',
-            photo: "/public/images/lana-byrd.webp"
+            photo: "/images/lana-byrd.webp"
         }
     ]
     return (
@@ -58,11 +58,8 @@ const Home = () => {
                         </p>
 
                         <div className="flex justify-center md:justify-start gap-5 py-4">
-                            <Link to="/#services" className="primaryBtn">
+                            <Link to="/our-services" className="primaryBtn">
                                 Our services
-                            </Link>
-                            <Link to="/#about" className="secondaryBtn">
-                                About us
                             </Link>
                         </div>
                     </div>
@@ -105,7 +102,7 @@ const Home = () => {
                         </p>
 
                         <div className="flex gap-5">
-                            <Link to="/services" className="primaryBtn">
+                            <Link to="/our-services" className="primaryBtn">
                                 Our services
                             </Link>
                         </div>

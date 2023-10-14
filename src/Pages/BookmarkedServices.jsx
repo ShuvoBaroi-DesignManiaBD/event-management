@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import ServiceCard from "../Components/Cards/ServiceCard";
 import InnerPagesHero from "../Components/Hero/InnerPagesHero";
 import { getBookmarkedData } from "../Hooks/useBookmarkedData";
@@ -6,7 +6,6 @@ import { useAuth } from "../Hooks/useAuth";
 import Login from "./Login";
 const BookmarkedServices = () => {
     const bookedServices = getBookmarkedData();
-    const navigate = useNavigate();
     const {user} = useAuth();
     if(user) {
         return (

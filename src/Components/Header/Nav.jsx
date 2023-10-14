@@ -12,7 +12,7 @@ const Nav = () => {
                 Home
             </NavLink>
 
-            <NavLink to="/services" className={activeStatus}>
+            <NavLink to="/our-services" className={activeStatus}>
                 Services
             </NavLink>
             {user ?
@@ -34,8 +34,6 @@ const Nav = () => {
                                 className="w-[50px] transition-all duration-1000 cursor-pointer rounded-full"
                                 
                             />
-
-                            {/* {offCanvas && <OffCanvas className="transition-all duration-1000" />} */}
                     </div>
 
                 </>

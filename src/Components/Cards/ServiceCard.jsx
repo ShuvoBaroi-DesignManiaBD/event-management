@@ -11,7 +11,7 @@ const ServiceCard = ({service}) => {
                 <h3 className={`text-primary text-center text px-4 py-2 rounded-md font-medium bg-[#f6eaff]`}>${service.price}</h3>
                 <h2 className="textLg">{service.name}</h2>
                 <p className="text text-textColor">{service.shortDescription}...</p>
-                <NavLink className="primaryBtn w-full text-center" state={service.key} onClick={() => navigate(`/${path}`, { state: service.key })}>View details</NavLink>
+                <NavLink className="primaryBtn w-full text-center" state={service.key} onClick={() => navigate(`/services/${path}`, { state: service.key })}>View details</NavLink>
             </div>
         </div>
     );

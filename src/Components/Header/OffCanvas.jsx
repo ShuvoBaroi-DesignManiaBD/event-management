@@ -14,7 +14,7 @@ const OffCanvas = ({setOffCanvas, offCanvas}) => {
                     <NavLink to="/" className={`font-medium ${activeStatus}`} onClick={() => setOffCanvas(!offCanvas)}>
                         Home
                     </NavLink>
-                    <NavLink to="/services" className={activeStatus} onClick={() => !offCanvas}>
+                    <NavLink to="/our-services" className={activeStatus} onClick={() => !offCanvas}>
                         Services
                     </NavLink>
                     {user ?
@@ -50,7 +50,6 @@ const OffCanvas = ({setOffCanvas, offCanvas}) => {
                             className="w-[50px] transition-all duration-1000 cursor-pointer rounded-full"
                         />
 
-                        {/* {offCanvas && <OffCanvas className="transition-all duration-1000" />} */}
                     </div>
                 )}
                 <AiFillCloseCircle size={40} className="text-primary absolute top-5 right-5" onClick={() => !offCanvas}></AiFillCloseCircle>

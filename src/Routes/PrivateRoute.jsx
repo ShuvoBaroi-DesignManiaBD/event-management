@@ -3,7 +3,7 @@ import { useAuth } from "../Hooks/useAuth";
 import Login from "../Pages/Login";
 import ServicesProvider from "../Contexts/ServicesContext";
 
-const PrivateRoute = () => {
+const PrivateRoute = ({children}) => {
 
     const { user } = useAuth();
     if (user) {
@@ -12,6 +12,7 @@ const PrivateRoute = () => {
             <>
                 <ServicesProvider>
                     <Outlet></Outlet>
+                    {children}
                 </ServicesProvider>
             </>
         );

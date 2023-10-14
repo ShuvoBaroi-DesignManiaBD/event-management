@@ -1,8 +1,7 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
-import { createContext, useContext, useEffect, useState } from "react";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
 import { auth } from "../Configs/Firebase.config";
 import Swal from "sweetalert2";
-// import { addUser, getUsers } from "../Storage/DataStorage";
 
 
 
@@ -12,14 +11,12 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             console.log(currentUser);
             setUser(currentUser);
             setLoading(false);
-            // user? addUser(user.user): '';
         });
 
         return () => {
@@ -29,7 +26,14 @@ export const AuthProvider = ({ children }) => {
 
     const createUserWithEmail = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
-            .then((user) => setUser(user?.user))
+            .then(user => {
+                setUser(user?.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!!!',
+                    text: 'You have successfully logged in',
+                })
+            })
             .catch((error) => {
                 console.error(error);
                 Swal.fire({
@@ -42,11 +46,14 @@ export const AuthProvider = ({ children }) => {
 
     const signInWithEmail = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
-            .then(user => setUser(user?.user) && Swal.fire({
-                icon: 'success',
-                title: 'Success!!!',
-                text: 'You have successfully logged in',
-            }))
+            .then(user => {
+                setUser(user?.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!!!',
+                    text: 'You have successfully logged in',
+                })
+            })
             .catch((error) => {
                 console.error(error);
                 Swal.fire({
@@ -66,10 +73,6 @@ export const AuthProvider = ({ children }) => {
                     title: 'Success!!!',
                     text: 'You have successfully logged in',
                 })
-                // console.log(user);
-                // console.log(user.user);
-                // user? addUser(user.user): '';
-                // getUsers();
             })
             .catch(err => {
                 console.error(err)
@@ -122,7 +125,6 @@ export const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={authentication}>
             {children}
-            {/* {!loading ? children : null} */}
         </AuthContext.Provider>
     )
 }

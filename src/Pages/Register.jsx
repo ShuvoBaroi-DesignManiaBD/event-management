@@ -2,7 +2,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import SocialLogin from "../Components/Authenications/SocialLogin";
 import { useAuth } from "../Hooks/useAuth";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
@@ -23,16 +22,6 @@ const Register = () => {
                 title: 'Oops!',
                 text: 'Your password must have one uppercase, lowercase & special character!',
             })
-            // toast.error('Your password must have one uppercase, lowercase & special character!', {
-            //     position: "top-center",
-            //     autoClose: 5000,
-            //     hideProgressBar: false,
-            //     closeOnClick: true,
-            //     pauseOnHover: true,
-            //     draggable: true,
-            //     progress: undefined,
-            //     theme: "light",
-            // });
         } else {
             createUserWithEmail(email, password) && navigate("/");
             e.target.reset();
@@ -42,13 +31,13 @@ const Register = () => {
         setShowPassword(!showPassword);
     }
     return (
-        <section className="container py-10 mx-auto flex justify-between">
-            <img src="./images/register.svg" alt="register image" className="w-1/2" />
+        <section className="container px-4 md:px-0 pb-20 md:py-10 mx-auto flex flex-col md:flex-row justify-between">
+            <img src="./images/register.svg" alt="register image" className="md:w-1/2" />
             <div className="w-full flex flex-col items-center justify-center mx-auto lg:py-0">
                 <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="secondaryHeading text-gray-900">
-                            Sign in to your account
+                            Create an account
                         </h1>
                         <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                             <div>

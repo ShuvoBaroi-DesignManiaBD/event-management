@@ -9,7 +9,7 @@ const Services = () => {
             <InnerPagesHero>
                 Our services
             </InnerPagesHero>
-            <section className="bg-white" id="services">
+            <section className="bg-white">
                 <div className="container py-8 px-4 mx-auto lg:py-16 lg:px-6 ">
 
                     <div className="grid gap-10 mb-6 lg:mb-16 md:grid-cols-3">
